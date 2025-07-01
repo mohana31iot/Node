@@ -20,7 +20,7 @@ const Server = http.createServer((req,res) =>{
     var myReadStream = PS.createReadStream(__dirname +'/Sample.html', 'utf8');
     myReadStream.pipe(res);
 })
-Server.listen(3000,'192.168.1.16');
+Server.listen(3000,'192.168.1.13');
 console.log("server running at port 3000");
 
 // Pipe Running Html in Server
@@ -32,7 +32,7 @@ const htmlServer = HTML.createServer((req,res) =>{
     var myReadStream = PSH.createReadStream(__dirname +'/Sample.html', 'utf8');
     myReadStream.pipe(res);
 })
-htmlServer.listen(3002,'192.168.1.16');
+htmlServer.listen(3002,'192.168.1.13');
 console.log("server running at port 3002");
 
 // Pipe Running JSON in Server
@@ -73,8 +73,8 @@ else{
     res.end('File Not Found');
 }
 });
-serve.listen( ');
-console.log("Server runningat port 3011");
+serve.listen( 3100,'192.168.1.13');
+console.log("Server running at port 3100");
 
 
 
