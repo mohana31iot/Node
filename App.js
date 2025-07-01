@@ -52,3 +52,43 @@ module.exports.multiply=function(a,b){ return `The multiplication of the 2 numbe
 // counter:counter,
 // multiply:multiply
 // };
+// Module export counter
+//  module.exports.counter = function(name)
+//  {
+//      console.log(`My sister Name is ${name}`);
+//  };
+//  module.exports.Name = function(){
+//      console.log ("Hemavathy")
+//  };
+
+
+// var events = require('events');
+// var myEmitter = new events.EventEmitter();
+// myEmitter.on("someEvent",function(msg){
+//     console.log(msg);
+// });
+//  myEmitter.emit('someEvent','The event was emitted')
+
+// Util Inherits
+
+var events = require ('events');
+var util = require ('util');
+var person = function(name) {
+    this.name = name;
+}
+
+util. inherits(person, events.EventEmitter);
+
+    var A = new person ('Mohana');
+    var B = new person ('Jayaraj');
+    var C = new person ('Vijay');
+    var people = [A, B, C];
+
+    people.forEach(function(person){
+        person.on('speak',function(msg){
+            console.log(person.name + ' said ' +msg);
+        })
+    })
+ B.emit('speak', 'Hello Every one');
+ A.emit('speak', 'Hey Buddy');
+ C.emit('speak', 'Think Positive');
